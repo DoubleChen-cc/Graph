@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblink.a CMakeFiles/link.dir/utils/globals.cu.o CMakeFiles/link.dir/utils/mem_pool.cu.o CMakeFiles/link.dir/structures/hashed_trie_manager_kernel.cu.o CMakeFiles/link.dir/structures/hashed_trie_manager.cu.o CMakeFiles/link.dir/structures/hashed_tries.cu.o CMakeFiles/link.dir/processing/join_bfs_dfs.cu.o CMakeFiles/link.dir/processing/join_bfs.cu.o CMakeFiles/link.dir/processing/plan.cu.o CMakeFiles/link.dir/graph/graph_gpu.cu.o CMakeFiles/link.dir/execution/execution.cu.o
+/usr/bin/ranlib liblink.a
