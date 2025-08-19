@@ -1,4 +1,4 @@
-  inline constexpr int UNROLL = 8;
+  inline constexpr int UNROLL = 6;
   inline constexpr bool LABELED = false;
   inline constexpr bool EDGE_INDUCED = true;
   inline constexpr bool STEAL_IN_BLOCK = false;
