@@ -35,7 +35,7 @@ namespace STMatch {
   inline constexpr int MAX_SN=4;
   inline constexpr int BUCKET_SIZE=8;
   inline constexpr int CHECK_BUCKET_NUM=2;
-  inline constexpr bool KEY_NODE=false;
+  inline constexpr bool KEY_NODE=true;
 
   //static_assert(2 * JOB_CHUNK_SIZE <= GRAPH_DEGREE); 
 
