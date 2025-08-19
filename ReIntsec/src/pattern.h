@@ -60,12 +60,12 @@ namespace STMatch {
       //std::cout << "Pattern read complete. Pattern size: " << (int)pat.nnodes << std::endl;
     }
 
-    // Pattern* to_gpu() {
-    //   Pattern* patcopy;
-    //   cudaMalloc(&patcopy, sizeof(Pattern));
-    //   cudaMemcpy(patcopy, &pat, sizeof(Pattern), cudaMemcpyHostToDevice);
-    //   return patcopy;
-    // }
+    Pattern* to_gpu() {
+      Pattern* patcopy;
+      cudaMalloc(&patcopy, sizeof(Pattern));
+      cudaMemcpy(patcopy, &pat, sizeof(Pattern), cudaMemcpyHostToDevice);
+      return patcopy;
+    }
 
     void readfile(std::string& filename) {
       //std::cout << filename << std::endl;

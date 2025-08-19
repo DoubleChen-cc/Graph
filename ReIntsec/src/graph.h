@@ -38,26 +38,26 @@ namespace STMatch {
       readfile(filename);
     }
 
-    // Graph* to_gpu() {
-    //   Graph gcopy = g;
+    Graph* to_gpu() {
+      Graph gcopy = g;
 
-    //   cudaMalloc(&gcopy.rowptr, sizeof(graph_edge_t) * (g.nnodes + 1));
-    //   cudaMalloc(&gcopy.colidx, sizeof(graph_node_t) * g.nedges);
-    //   cudaMemcpy(gcopy.rowptr, g.rowptr, sizeof(graph_edge_t) * (g.nnodes + 1), cudaMemcpyHostToDevice);
-    //   cudaMemcpy(gcopy.colidx, g.colidx, sizeof(graph_node_t) * g.nedges, cudaMemcpyHostToDevice);
-    //   if(KEY_NODE){
-    //     cudaMalloc(&gcopy.keyrow, sizeof(graph_edge_t) * (g.nnodes + 1));
-    //     cudaMalloc(&gcopy.keycol, sizeof(graph_node_t) * g.keyrow[g.nnodes]);
-    //     cudaMemcpy(gcopy.keyrow, g.keyrow, sizeof(graph_edge_t) * (g.nnodes + 1), cudaMemcpyHostToDevice);
-    //     cudaMemcpy(gcopy.keycol, g.keycol, sizeof(graph_node_t) * g.keyrow[g.nnodes], cudaMemcpyHostToDevice);
-    //   }
+      cudaMalloc(&gcopy.rowptr, sizeof(graph_edge_t) * (g.nnodes + 1));
+      cudaMalloc(&gcopy.colidx, sizeof(graph_node_t) * g.nedges);
+      cudaMemcpy(gcopy.rowptr, g.rowptr, sizeof(graph_edge_t) * (g.nnodes + 1), cudaMemcpyHostToDevice);
+      cudaMemcpy(gcopy.colidx, g.colidx, sizeof(graph_node_t) * g.nedges, cudaMemcpyHostToDevice);
+      if(KEY_NODE){
+        cudaMalloc(&gcopy.keyrow, sizeof(graph_edge_t) * (g.nnodes + 1));
+        cudaMalloc(&gcopy.keycol, sizeof(graph_node_t) * g.keyrow[g.nnodes]);
+        cudaMemcpy(gcopy.keyrow, g.keyrow, sizeof(graph_edge_t) * (g.nnodes + 1), cudaMemcpyHostToDevice);
+        cudaMemcpy(gcopy.keycol, g.keycol, sizeof(graph_node_t) * g.keyrow[g.nnodes], cudaMemcpyHostToDevice);
+      }
 
 
-    //   Graph* gpu_g;
-    //   cudaMalloc(&gpu_g, sizeof(Graph));
-    //   cudaMemcpy(gpu_g, &gcopy, sizeof(Graph), cudaMemcpyHostToDevice);
-    //   return gpu_g;
-    // }
+      Graph* gpu_g;
+      cudaMalloc(&gpu_g, sizeof(Graph));
+      cudaMemcpy(gpu_g, &gcopy, sizeof(Graph), cudaMemcpyHostToDevice);
+      return gpu_g;
+    }
 
     // TODO: dryadic graph format 
 
