@@ -63,7 +63,7 @@ make
 
 To get the matching time of using "Reuse + Key nodes":
 ```Shell
-sed -i 's/inline constexpr bool KEY_NODE=true;/inline constexpr bool KEY_NODE=true;/' src/config.h
+sed -i 's/inline constexpr bool KEY_NODE=false;/inline constexpr bool KEY_NODE=true;/' src/config.h
 make clean
 make
 ./bin/reint.exe data/bin_graph/email-Enron/snap.txt pattern/2.g
